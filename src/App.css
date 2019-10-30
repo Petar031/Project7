@@ -1,12 +1,26 @@
-.App {
+/*.App {
   text-align: center;
+}*/
+
+.Main-background {
+  width:100%;
+  height:auto;
 }
 
-.App-logo {
-  height: 40vmin;
+
+body, html {
+  height: 100%;
+  margin: 0;
 }
 
-.App-header {
+div .container-fluid{
+  padding-left:0px;
+  padding-right:0px;
+}
+
+
+
+/*.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,4 +33,5 @@
 
 .App-link {
   color: #09d3ac;
-}
+}*/
+/*sve iznad obrisati osim main background  */

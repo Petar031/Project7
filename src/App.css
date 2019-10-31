@@ -19,6 +19,15 @@ div .container-fluid{
 }
 
 
+.HomePage{
+  background-image:url("./assets/backgroundImg.jpeg");
+  display:flex;
+  background-position:center;
+  background-attachment:fixed;
+  align-items:center;
+  justify-content:center;
+  height:913px;
+}
 
 /*.App-header {
   background-color: #282c34;

@@ -2,6 +2,8 @@
   text-align: center;
 }*/
 
+
+
 .Main-background {
   width:100%;
   height:auto;
@@ -19,15 +21,17 @@ div .container-fluid{
 }
 
 
-.HomePage{
+.home-page{
   background-image:url("./assets/backgroundImg.jpeg");
   display:flex;
   background-position:center;
   background-attachment:fixed;
   align-items:center;
   justify-content:center;
-  height:913px;
+  height: 100vh;
 }
+
+
 
 /*.App-header {
   background-color: #282c34;

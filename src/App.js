@@ -10,13 +10,18 @@ import VehicleModel from "./pages/VehicleModel";
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
 import Navbar from "./components/Navbar";
 
+
+
 function App() {
   return (
      <div class="container-fluid">  
        <Navbar />
-       <Route exact path="/" component={HomePage}/> 
+       <Route exact path="/" component={HomePage} /> 
        <Route exact path="/VehicleMake/" component={VehicleMake}/>
        <Route exact path="/VehicleModel/" component={VehicleModel}/>
+
+      
+       
 
      </div>
    /* <div className="App">
@@ -42,3 +47,12 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+

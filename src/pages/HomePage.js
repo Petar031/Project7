@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom'
 
 export default function HomePage() {
     
+
+    
+
     return (
         
               <div class="home-page">
@@ -20,24 +23,10 @@ export default function HomePage() {
               <p class="text-muted"> © 2019 Copyright:></p>
               </div>
 
-                          
-            
             </div>
 
 
-             
-
-
-
-
-
                 </div>  
-
-
-
-
-
-
        
     );
 }

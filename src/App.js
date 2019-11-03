@@ -11,6 +11,8 @@ import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 
 import Navbar from "./components/Navbar";
 
 
+import TableMake from "./components/TableMake";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
        <Route exact path="/VehicleMake/" component={VehicleMake}/>
        <Route exact path="/VehicleModel/" component={VehicleModel}/>
 
+       <Route path="/VehicleMake/" component={TableMake}/>
       
        
 

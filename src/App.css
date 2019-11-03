@@ -13,6 +13,7 @@
 body, html {
   height: 100%;
   margin: 0;
+  overflow:hidden;
 }
 
 div .container-fluid{
@@ -31,7 +32,9 @@ div .container-fluid{
   height: 100vh;
 }
 
-
+button#pageDropDown.btn.btn-default.btn-secondary.dropdown-toggle{
+  /*ovdje promijeniti padajući izbornik sa paginacijom  */
+}
 
 /*.App-header {
   background-color: #282c34;

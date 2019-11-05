@@ -13,8 +13,14 @@
 body, html {
   height: 100%;
   margin: 0;
-  overflow:hidden;
+ /* overflow:hidden;*/
 }
+
+.react-bs-table-container .row{
+  padding:0px;
+  margin:0px;
+}
+
 
 div .container-fluid{
   padding-left:0px;
@@ -32,9 +38,10 @@ div .container-fluid{
   height: 100vh;
 }
 
+/*
 button#pageDropDown.btn.btn-default.btn-secondary.dropdown-toggle{
-  /*ovdje promijeniti padajući izbornik sa paginacijom  */
-}
+  ovdje promijeniti padajući izbornik sa paginacijom  
+} */
 
 /*.App-header {
   background-color: #282c34;

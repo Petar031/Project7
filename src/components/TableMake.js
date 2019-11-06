@@ -1,11 +1,11 @@
 
 import React from 'react'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-/*import VehicleMake from "./pages/VehicleMake";*/
+/*import Vehicles from "./pages/VehicleMake";*/
 /*import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';*/
 import {FaSort} from 'react-icons/fa'
 
-const VehicleMake = () => {
+const Vehicles = () => {
 
 
  
@@ -60,5 +60,5 @@ const VehicleMake = () => {
     }
     
  
-    export default VehicleMake; 
+    export default Vehicles; 
     

@@ -8,7 +8,6 @@ export default class Navbar extends Component {
 
 
      
-
         return (
 
           
@@ -23,13 +22,13 @@ export default class Navbar extends Component {
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav m-auto">
       <li class="nav-item active">
-       <a class="nav-link text-white text-uppercase ml-5" href="/"> <FaHome/> Home Page<span class="sr-only">(current)</span></a>
+       <a class="nav-link text-white text-uppercase ml-5" href="/"> <FaHome/>   Home Page<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-       <a class="nav-link text-white text-uppercase ml-5" href="/VehicleMake">VehicleMake </a>
+       <a class="nav-link text-white text-uppercase ml-5" href="/Vehicles">Vehicles </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase ml-5" href="/VehicleModel">   Vehicle Model</a>
+        <a class="nav-link text-white text-uppercase ml-5" href="/VehicleModels">Vehicle Models</a>
       </li>
     </ul>
     <span class="navbar-text">

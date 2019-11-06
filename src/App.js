@@ -4,29 +4,42 @@ import React from 'react';
 import './App.css';
 
 import HomePage from "./pages/HomePage";
-import VehicleMake from "./pages/VehicleMake";
-import VehicleModel from "./pages/VehicleModel";
+import Vehicles from "./pages/Vehicles";
+import VehicleModels from "./pages/VehicleModels";
 
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
 import Navbar from "./components/Navbar";
 
 
 import TableMake from "./components/TableMake";
+import TableModel from "./components/TableModel";
+
+
+
+
+
+
 
 
 
 
 function App() {
+
+ 
+  
+
   return (
      <div class="container-fluid">  
+
+
        <Navbar />
        <Route exact path="/" component={HomePage} /> 
-       <Route exact path="/VehicleMake/" component={VehicleMake}/>
-       <Route exact path="/VehicleModel/" component={VehicleModel}/>
+       <Route exact path="/Vehicles/" component={Vehicles}   />  
+       <Route exact path="/VehicleModels/" component={VehicleModels}/>
 
-       <Route path="/VehicleMake/" component={TableMake}/>
+       <Route path="/Vehicles/" component={TableMake}/>
+       <Route path="/VehicleModels/" component={TableModel}/>
       
-       
 
      </div>
    /* <div className="App">
@@ -48,11 +61,18 @@ function App() {
       </header>
     </div> */
 
+
+    
+
+
   );
-}
+} 
 
-export default App;
 
+
+
+
+export default App; 
 
 
 

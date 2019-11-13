@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import TableModel from "./../components/TableModel";
+import TableModel from "./TableModel";
 
 
 
-export default class VehicleModels extends Component{
+export default class VehicleModel extends Component{
 
     render() {
         return (

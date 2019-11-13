@@ -40,6 +40,12 @@ div .container-fluid{
 
 
 
+
+.home-footer-text{
+  
+  background-color:red;
+}
+
 /*sakriven navbar za svih stranica  */
 /*
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark{

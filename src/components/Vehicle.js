@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import TableMake from "./../components/TableMake";
+import TableMake from "./TableMake";
 
 
 
-export default class Vehicles extends Component{
+export default class Vehicle extends Component{
 
     render() {
         return (

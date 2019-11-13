@@ -1,26 +1,23 @@
-import React from 'react'
+import React from 'react';
+
+import VehicleModel from './../components/VehicleModel';
+import Navbar from "../components/Navbar";
 
 
-
-
-
-
-const VehicleModels = () => {
-
-  
-
+export default function VehicleModelsPage() {
     return (
         <div>
-              hello from Vehicles
-
-              
-          
-
-             
-
-
+            <Navbar />
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                <div class="home-text">
+                    <p class="text-muted">Hello there</p>
+                </div>
+                <VehicleModel />
+                <div class="home-footer-text">
+                    <p class="text-muted">   2019 Copyright:></p>
+                </div>
+            </div>
         </div>
+
     );
 }
-
-export default VehicleModels; 

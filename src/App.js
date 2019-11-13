@@ -4,11 +4,12 @@ import React from 'react';
 import './App.css';
 
 import HomePage from "./pages/HomePage";
-import Vehicle from "./pages/Vehicle";
-import VehicleModel from "./pages/VehicleModel";
+import Vehicles from "./pages/Vehicles";
+import VehicleModels from "./pages/VehicleModels";
 
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
 
+/*import FooterHome from "./layouts/FooterHome";*/
 
 /*Ovaj dio ćemo ispod brisati   */
 //import Navbar from "./components/Navbar";
@@ -32,21 +33,23 @@ function App() {
   
 
   return (
-     <div class="container-fluid">  
+     <div class="App">  
 
 
       
        <Route exact path="/" component={HomePage} /> 
-       <Route exact path="/Vehicles/" component={Vehicle}   />  
-       <Route exact path="/VehicleModels/" component={VehicleModel}/>
+       <Route exact path="/Vehicles/" component={Vehicles}   />  
+       <Route exact path="/VehicleModels/" component={VehicleModels}/>
 
-     
-       
+    
       
 
        
 
      </div>
+    // <FooterHome/>
+
+
    /* <div className="App">
       <header className="App-header">
         <img src={backgroundImg} className="Main-background" alt="backgroundImg" />

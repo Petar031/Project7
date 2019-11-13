@@ -4,19 +4,22 @@ import React from 'react';
 import './App.css';
 
 import HomePage from "./pages/HomePage";
-import Vehicles from "./pages/Vehicles";
-import VehicleModels from "./pages/VehicleModels";
+import Vehicle from "./pages/Vehicle";
+import VehicleModel from "./pages/VehicleModel";
 
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
-import Navbar from "./components/Navbar";
 
 
-import TableMake from "./components/TableMake";
-import TableModel from "./components/TableModel";
+/*Ovaj dio ćemo ispod brisati   */
+//import Navbar from "./components/Navbar";
 
 
+/*import TableMake from "./components/TableMake";*/
+//import TableModel from "./components/TableModel";
 
 
+//import HomeNavbar from "./components/HomeNavbar";
+/*Ovaj dio iznad brišemo   */
 
 
 
@@ -32,14 +35,16 @@ function App() {
      <div class="container-fluid">  
 
 
-       <Navbar />
-       <Route exact path="/" component={HomePage} /> 
-       <Route exact path="/Vehicles/" component={Vehicles}   />  
-       <Route exact path="/VehicleModels/" component={VehicleModels}/>
-
-       <Route path="/Vehicles/" component={TableMake}/>
-       <Route path="/VehicleModels/" component={TableModel}/>
       
+       <Route exact path="/" component={HomePage} /> 
+       <Route exact path="/Vehicles/" component={Vehicle}   />  
+       <Route exact path="/VehicleModels/" component={VehicleModel}/>
+
+     
+       
+      
+
+       
 
      </div>
    /* <div className="App">
@@ -59,6 +64,18 @@ function App() {
           Learn React
         </a>
       </header>
+
+
+<Route path="/Vehicles/" component={TableMake}/>
+       <Route path="/VehicleModels/" component={TableModel}/>
+      
+       <Route path="/" component={HomeNavbar}/> 
+
+<Route path="/Vehicles/" component={TableMake}/>
+
+   <Route path="/VehicleModels/" component={TableModel}/>
+      
+       <Route path="/" component={HomeNavbar}/> 
     </div> */
 
 

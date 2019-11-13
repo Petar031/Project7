@@ -1,10 +1,17 @@
-import React from 'react'
+import React,{ Component } from 'react'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 /*import Vehicles from "./pages/VehicleMake";*/
 /*import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';*/
 import {FaSort} from 'react-icons/fa'
 
-const VehicleModels = () => {
+
+
+
+
+export default class TableModel extends Component {
+
+
+  render(){
 
 
  
@@ -92,6 +99,4 @@ const VehicleModels = () => {
             </div>
         );
     }
-    
- 
-    export default VehicleModels; 
+  }

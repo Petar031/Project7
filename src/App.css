@@ -38,6 +38,18 @@ div .container-fluid{
   height: 100vh;
 }
 
+
+
+/*sakriven navbar za svih stranica  */
+/*
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark{
+  display:none;
+}*/
+
+/*.Navbar {
+  display:none;
+}*/
+
 /*
 button#pageDropDown.btn.btn-default.btn-secondary.dropdown-toggle{
   ovdje promijeniti padajući izbornik sa paginacijom  

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 /*import MainImage from '../assets/backgroundImg.jpeg'*/
-
+import FooterHome from "./../layouts/FooterHome";
 
 
 export default function HomePage() {
@@ -19,8 +19,10 @@ export default function HomePage() {
                <button type="button" class="btn btn-secondary">Enter Application</button>
                </Link>
                </div>
+              <FooterHome/>
                <div class="home-footer-text">
-              <p class="text-muted"> © 2019 Copyright:></p>
+              
+              
               </div>
 
             </div>

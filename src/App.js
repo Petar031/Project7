@@ -9,7 +9,8 @@ import VehicleModels from "./pages/VehicleModels";
 
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
 
-/*import FooterHome from "./layouts/FooterHome";*/
+
+
 
 /*Ovaj dio ćemo ispod brisati   */
 //import Navbar from "./components/Navbar";
@@ -36,7 +37,7 @@ function App() {
      <div class="App">  
 
 
-      
+       
        <Route exact path="/" component={HomePage} /> 
        <Route exact path="/Vehicles/" component={Vehicles}   />  
        <Route exact path="/VehicleModels/" component={VehicleModels}/>

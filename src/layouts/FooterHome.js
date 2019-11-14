@@ -1,12 +1,25 @@
-/*import React, {Component} from 'react';
-
-import HomePage from "./../pages/HomePage";
-
-import './layouts/FooterHome.css';
 
 
-class FooterHome extends React.Component {
+ import React, {Component} from 'react';
+ import './FooterHomeStyle.css';
+ /*import HomePage from "./pages/HomePage";*/
+ 
+ 
+ export default class FooterHome extends Component{
+
     render() {
-      return <h1>Hello World!</h1>;
+        return (
+            <div>
+            
+           <div class="home-footer-text home-footer">
+              
+              <p class="text-muted"> © 2019 Copyright:</p>
+              </div>
+
+            </div>
+        );
     }
-  }  */
+}
+
+
+

@@ -1,0 +1,10 @@
+/*.home-page{
+    background-image:url("./../assets/backgroundImg.jpeg");
+    display:flex;
+    background-position:center;
+    background-attachment:fixed;
+    align-items:center;
+    justify-content:center;
+    height: 100vh;
+}
+*/

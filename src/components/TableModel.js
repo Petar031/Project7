@@ -87,7 +87,7 @@ export default class TableModel extends Component {
 
 
                   
-        <BootstrapTable data={ products } striped hover pagination insertRow version='4'>
+        <BootstrapTable data={ products } striped hover pagination insertRow tableStyle= {{background: 'red' }} headerStyle={ { background: 'blue' } }  bodyStyle={ { background: 'pink' } }  version='4'>
       
           <TableHeaderColumn dataField='id' isKey={ true } dataSort= { true }> Vehicle ID <FaSort/></TableHeaderColumn>
           <TableHeaderColumn dataField='model' filter={ { type: 'TextFilter', delay: 500 } }     >Vehicle Model <FaSort/></TableHeaderColumn>

@@ -13,7 +13,7 @@
             
            <div class="home-footer-text home-footer">
               
-              <p class="text-muted"> © 2019 Copyright:</p>
+              <p class="text-white"> © 2019 Copyright:</p>
               </div>
 
             </div>

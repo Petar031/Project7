@@ -17,13 +17,20 @@ export default class TableMake extends Component {
 
  render(){
 
+
+  /*var name = "Opel Astra";
+  var abrv = name.split(" ").map(function(str) {
+   return str.substring(0, 2).toUpperCase();
+ }).join(" ");
+ console.log(abrv);  */
    
  const products = [];
 
-
+ 
 
     function addProducts(quantity) {
 
+    
 
       const startId = products.length;
       for (let i = 0; i < quantity; i++) {
@@ -32,10 +39,8 @@ export default class TableMake extends Component {
         products.push({
           id: id,
           name: 'Opel Agila',      //name: 'Opel Agila' + id,
-          /*price: 2100 + i,*/
-         
-         // abrv: 'Opel Agila'.substring(0,2),
-          abrv: 'Opel Agila'.substr(2),
+          abrv: '',                           /*price: 2100 + i,*/
+                           // abrv: 'Opel Agila'.substring(0,2)
         },
 
 

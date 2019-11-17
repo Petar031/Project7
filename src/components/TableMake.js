@@ -28,12 +28,38 @@ export default class TableMake extends Component {
       const startId = products.length;
       for (let i = 0; i < quantity; i++) {
         const id = startId + i;
+       
         products.push({
           id: id,
-          name: 'Opel ' + id,
+          name: 'Opel Agila',      //name: 'Opel Agila' + id,
+          /*price: 2100 + i,*/
+         
+         // abrv: 'Opel Agila'.substring(0,2),
+          abrv: 'Opel Agila'.substr(2),
+        },
+
+
+        {
+
+          id: id,
+          name: 'Opel Adam',
           /*price: 2100 + i,*/
           abrv: 'Short '+ id,
-        });
+        },
+
+        {
+          id: id,
+          name: 'Opel Chevette',
+          /*price: 2100 + i,*/
+          abrv: 'Short '+ id,
+        },
+        {
+        id: id,
+          name: 'Opel Corsa' ,
+          /*price: 2100 + i,*/
+          abrv: 'Short '+ id,
+        }
+        );
       }
     }
 

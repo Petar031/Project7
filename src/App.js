@@ -10,21 +10,49 @@ import VehicleModels from "./pages/VehicleModels";
 import {Route} from "react-router-dom"  /*procijeniti dali tu ide Swithc ili ne 34min, on se inaće koristi ako u vehicle make imam još dosta stranica u koje ću ulaziti  */
 
 
+//  mobx obrisati import za App.css
+//  import {inject, observer} from 'mobx-react';
+//  @inject ('Store')  --injecatmo app sa Store, passes my store as a prop
+//  @observer
+//  class App extends Component {
+//    handleSubmit = (e) => {
+//      e.preventDefault();
+//        const bird = this.bird.value;
+//        this.props.Store.addStore(store)         
+//    }
+//  render(){
+//      const {BirdStore} = this.props;  //accesing data from an object
+//    <div className="App">
+//        <h2>You have {Store.birdCount} birds </h2>  
+//          <form onSubmit={e => this.handleSubmit(e)}>      //kreiramo event
+//                 <input type="text" placeholder="Enter bird" ref={input => this.bird = input}/>
+//                 <button>Add bird</button>
+//          </form>
+//         
+//         
+//
+//    </div>
+//           };
+//          }
+//         }
+//   export default App;
+
+
+
+
+
+
+
 
 
 /*Ovaj dio ćemo ispod brisati   */
 //import Navbar from "./components/Navbar";
 
-
 /*import TableMake from "./components/TableMake";*/
 //import TableModel from "./components/TableModel";
 
-
 //import HomeNavbar from "./components/HomeNavbar";
 /*Ovaj dio iznad brišemo   */
-
-
-
 
 
 

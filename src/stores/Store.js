@@ -1,23 +1,22 @@
-/*import { observable, action, decorate } from "mobx";
-class ContactsStore {
-  contacts = [];
-  setContacts(contacts) {
-    this.contacts = contacts;
+import { observable, action, computed } from 'mobx';
+
+class Store {
+  @observable birds = [];     //property koji želimo pratiti
+      
+  //dodajemo bird u array linija koda 4, action - modify the data
+  @action addBird = (bird) => {
+      this.birds.push(bird);
+
   }
+   //vrati koliko ima ptica u nizu, computed function svaki puta kada radimo sa observable u ovom slučaju birds, radimo filtriranje ili izračun i kada želimo da observable bude u realnom vremenu sa komponentom, imamo ćeliju a i b u c je izračun koji zbraja a+b, kada recimo promjenimo a ćeiju automatski se c sum ćelija promjeni 
+  @computed get birdCount = ()  {
+      return this.birds.length;
+
+  }
+
 }
-ContactsStore = decorate(ContactsStore, {
-  contacts: observable,
-  setContacts: action,
-});
-export { ContactsStore };*/
 
-/*https://medium.com/javascript-in-plain-english/how-to-add-state-management-to-your-react-app-with-mobx-51310a951aa5  
-
-upute za implementaciju mobx-a
-
-https://www.robinwieruch.de/create-react-app-mobx-decorators
-
-https://www.google.com/search?q=how+to+implement+mobx+in+react+project&oq=how+to+implement+mobx+in+react+project&aqs=chrome..69i57.7443j0j9&sourceid=chrome&ie=UTF-8
-
-*/
-
+//kreiram varijablu store = kreiram novu Store instancu (new Store)
+const store = new Store();
+//eksportitam instancu od store
+export default store;

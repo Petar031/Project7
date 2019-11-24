@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-/*import Vehicles from "./pages/VehicleMake";*/
-/*import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';*/
-import {FaSort} from 'react-icons/fa'
 
+/*import {FaSort} from 'react-icons/fa';*/
+import { MDBCard, MDBCardHeader, MDBCardBody, MDBDataTable } from "mdbreact";
 
 
 
@@ -24,76 +22,28 @@ export default class TableMake extends Component {
  }).join(" ");
  console.log(abrv);  */
    
- const products = [];
+ const columns = ["Person Name", "Age", "Company Name", "Country", "City"];
 
- 
-
-    function addProducts(quantity) {
-
+const data = [
+  ["Aurelia Vega", 30, "Deepends", "Spain", "Madrid"],
+  ["Guerra Cortez", 45, "Insectus", "USA", "San Francisco"],
+  ["Guadalupe House", 26, "Isotronic", "Germany", "Frankfurt am Main"],
+  ["Elisa Gallagher", 31, "Portica", "United Kingdom", "London"]
+];
     
 
-      const startId = products.length;
-      for (let i = 0; i < quantity; i++) {
-        const id = startId + i;
-       
-        products.push({
-          id: id,
-          name: 'Opel Agila',      //name: 'Opel Agila' + id,
-          abrv: '',                           /*price: 2100 + i,*/
-                           // abrv: 'Opel Agila'.substring(0,2)
-        },
-
-
-        {
-
-          id: id,
-          name: 'Opel Adam',
-          /*price: 2100 + i,*/
-          abrv: 'Short '+ id,
-        },
-
-        {
-          id: id,
-          name: 'Opel Chevette',
-          /*price: 2100 + i,*/
-          abrv: 'Short '+ id,
-        },
-        {
-        id: id,
-          name: 'Opel Corsa' ,
-          /*price: 2100 + i,*/
-          abrv: 'Short '+ id,
-        }
-        );
-      }
-    }
-
-
-    addProducts(50); 
-    
-  
-   
-   
-   
-
-
-
- 
- 
         return (
-            <div>
+           
+          <MDBCard>
+          <MDBCardHeader tag="h3" className="text-center font-weight-bold text-uppercase py-4">
+            Table Editable
+          </MDBCardHeader>
+          <MDBCardBody>
+            <MDBDataTable data={data} columns={columns} striped bordered />
+          </MDBCardBody>
+        </MDBCard>
 
 
-                  
-        <BootstrapTable data={ products } striped hover pagination insertRow  version='4'>
-      
-          <TableHeaderColumn dataField='id' isKey={ true } dataSort= { true }> Product ID <FaSort/></TableHeaderColumn>
-          <TableHeaderColumn dataField='name' filter={ { type: 'TextFilter', delay: 500 } }     >Product Name</TableHeaderColumn>
-          <TableHeaderColumn dataField='abrv' dataSort = { true }> Abrv <FaSort/></TableHeaderColumn>
-      </BootstrapTable>
-    
-    
-            </div>
         );
     }
   }

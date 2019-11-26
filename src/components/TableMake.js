@@ -1,9 +1,9 @@
-
 import React, { Component } from 'react';
-
-/*import {FaSort} from 'react-icons/fa';*/
-import { MDBCard, MDBCardHeader, MDBCardBody, MDBDataTable } from "mdbreact";
-
+/*import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';*/
+/*import Vehicles from "./pages/VehicleMake";*/
+/*import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';*/
+import {FaSort} from 'react-icons/fa'
+import { MDBDataTable } from 'mdbreact'; 
 
 
 
@@ -12,41 +12,120 @@ import { MDBCard, MDBCardHeader, MDBCardBody, MDBDataTable } from "mdbreact";
 
 export default class TableMake extends Component {
 
+ 
+  
+ 
+  
+ 
+ 
+   
 
  render(){
 
-
-  /*var name = "Opel Astra";
-  var abrv = name.split(" ").map(function(str) {
-   return str.substring(0, 2).toUpperCase();
- }).join(" ");
- console.log(abrv);  */
+  
    
- const columns = ["Person Name", "Age", "Company Name", "Country", "City"];
 
-const data = [
-  ["Aurelia Vega", 30, "Deepends", "Spain", "Madrid"],
-  ["Guerra Cortez", 45, "Insectus", "USA", "San Francisco"],
-  ["Guadalupe House", 26, "Isotronic", "Germany", "Frankfurt am Main"],
-  ["Elisa Gallagher", 31, "Portica", "United Kingdom", "London"]
-];
-    
+     return (
 
-        return (
-           
-          <MDBCard>
-          <MDBCardHeader tag="h3" className="text-center font-weight-bold text-uppercase py-4">
-            Table Editable
-          </MDBCardHeader>
-          <MDBCardBody>
-            <MDBDataTable data={data} columns={columns} striped bordered />
-          </MDBCardBody>
-        </MDBCard>
+      <div class="card">
+      <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+      <div class="card-body">
+        <div id="table" class="table-editable">
+          <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead>
+              <tr>
+                <th class="text-center">Person Name</th>
+                <th class="text-center">Age</th>
+                <th class="text-center">Company Name</th>
+                <th class="text-center">Country</th>
+                <th class="text-center">City</th>
+                <th class="text-center">Sort</th>
+                <th class="text-center">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                <td class="pt-3-half" contenteditable="true">30</td>
+                <td class="pt-3-half" contenteditable="true">Deepends</td>
+                <td class="pt-3-half" contenteditable="true">Spain</td>
+                <td class="pt-3-half" contenteditable="true">Madrid</td>
+                <td class="pt-3-half">
+                  <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                        aria-hidden="true"></i></a></span>
+                  <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                        aria-hidden="true"></i></a></span>
+                </td>
+                <td>
+                  <span class="table-remove"><button type="button"
+                      class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                </td>
+              </tr>
+            
+              <tr>
+                <td class="pt-3-half" contenteditable="true">Guerra Cortez</td>
+                <td class="pt-3-half" contenteditable="true">45</td>
+                <td class="pt-3-half" contenteditable="true">Insectus</td>
+                <td class="pt-3-half" contenteditable="true">USA</td>
+                <td class="pt-3-half" contenteditable="true">San Francisco</td>
+                <td class="pt-3-half">
+                  <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                        aria-hidden="true"></i></a></span>
+                  <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                        aria-hidden="true"></i></a></span>
+                </td>
+                <td>
+                  <span class="table-remove"><button type="button"
+                      class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                </td>
+              </tr>
+             
+              <tr>
+                <td class="pt-3-half" contenteditable="true">Guadalupe House</td>
+                <td class="pt-3-half" contenteditable="true">26</td>
+                <td class="pt-3-half" contenteditable="true">Isotronic</td>
+                <td class="pt-3-half" contenteditable="true">Germany</td>
+                <td class="pt-3-half" contenteditable="true">Frankfurt am Main</td>
+                <td class="pt-3-half">
+                  <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                        aria-hidden="true"></i></a></span>
+                  <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                        aria-hidden="true"></i></a></span>
+                </td>
+                <td>
+                  <span class="table-remove"><button type="button"
+                      class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                </td>
+              </tr>
+             
+              <tr class="hide">
+                <td class="pt-3-half" contenteditable="true">Elisa Gallagher</td>
+                <td class="pt-3-half" contenteditable="true">31</td>
+                <td class="pt-3-half" contenteditable="true">Portica</td>
+                <td class="pt-3-half" contenteditable="true">United Kingdom</td>
+                <td class="pt-3-half" contenteditable="true">London</td>
+                <td class="pt-3-half">
+                  <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                        aria-hidden="true"></i></a></span>
+                  <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                        aria-hidden="true"></i></a></span>
+                </td>
+                <td>
+                  <span class="table-remove"><button type="button"
+                      class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
 
-        );
-    }
-  }
- 
-    
-    
+      
+     );
+ }
+}
+

@@ -1,106 +1,76 @@
 import React from 'react';
 import MaterialTable from 'material-table';
-/*import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';*/
-/*import Vehicles from "./pages/VehicleMake";*/
-/*import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';*/
-/*import {FaSort} from 'react-icons/fa'*/
-/*import { MDBDataTable } from 'mdbreact'; */
+import '../layouts/Tables.css';
 
 
 
 
-
-/*
-export default class TableMake extends Component {
-
- 
-  
- 
-
- render(){
- 
-   
-
-     return (
-
-      
-      
-
-
-      
-     );
-
-
- }
-} */
-
-
-export default function MaterialTableDemo() {
+export default function TableMake() {
   const [state, setState] = React.useState({
     columns: [
       { title: 'ID', field: 'id'},
       { title: 'Name', field: 'name'},
-      { title: 'ABRV', field: 'abrv'},
-       { title: 'Production', field: 'year'},
+      
+      {title: 'Production', field:'year'},
+      {title: 'ABRV', field: 'abrv'},
+      
 
        
      
     ],
     data: [
-      {  name: 'Opel Astra',
-         id: '03244',
-         abrv: 'AP-AS',
-         year: 2004
+      {  name: 'Opel Ampera',
+         id: '03246',
+         abrv: 'OP - AM',
+         year: 2011
 
     
     },
 
     {  
       
-    name: 'Opel Astra',
+    name: 'Opel Tigra',
     id: '03244',
-    abrv: 'AP-AS',
-    year: 2004
-},
-
-
-{  
-      
-  name: 'Opel Astra',
-  id: '03244',
-  abrv: 'AP-AS',
-  year: 2004
-},
-
-
-{  
-      
-  name: 'Opel Astra',
-  id: '03244',
-  abrv: 'AP-AS',
-  year: 2004
+    abrv: 'OP - TI',
+    year: 2000
 },
 
 {  
       
-  name: 'Opel Astra',
-  id: '03244',
-  abrv: 'AP-AS',
-  year: 2004
+  name: 'Opel Karl',
+  id: '03224',
+  abrv: 'OP - KA',
+  year: 2015
+},
+
+{  
+      
+  name: 'Mazda Challenge',
+  id: '02244',
+  abrv: 'MA - CH',
+  year: 2017
+},
+
+{  
+      
+  name: 'Mazda3 Sedan',
+  id: '01244',
+  abrv: 'MA - SE',
+  year: 2018
 },
 
       {
-        name: 'Mazda Asuno',
-        id: '34565',
-        abrv: 'MA-AS',
-        year: 2005
+        name: 'Ford Mondeo',
+        id: '74565',
+        abrv: 'FO - MO',
+        year: 2017
       },
     ],
   });
 
   return (
     <MaterialTable
-      title="Editable Example"
+      title="Vehicles Table"
       columns={state.columns}
       data={state.data}
       editable={{
@@ -143,3 +113,10 @@ export default function MaterialTableDemo() {
     />
   );
 }
+
+
+
+
+
+
+

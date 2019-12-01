@@ -9,7 +9,7 @@ export default class VehicleModel extends Component{
         return (
             <div>
             
-                hello from Vehicles component
+                
                 <TableModel />
 
             </div>

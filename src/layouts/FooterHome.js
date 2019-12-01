@@ -13,7 +13,7 @@
             
            <div class="home-footer-text home-footer fixed-bottom">
               
-              <p class="text-white"> © 2019 Copyright Petar Cuckovic</p>
+              <p class="text-white"> © 2019 Copyright Petar Čučković</p>
               </div>
 
             </div>

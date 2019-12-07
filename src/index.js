@@ -7,7 +7,11 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
-/*
+
+
+
+
+/* za MobX
 import {Provider} from 'mobx-react';
 import Store from './stores/Stores';
 dali umjesto Router upisati Provider prema mobx-u

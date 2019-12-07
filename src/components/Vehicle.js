@@ -8,10 +8,7 @@ export default class Vehicle extends Component{
     render() {
         return (
             <div>
-            
-                
                 <TableMake />
-
             </div>
         );
     }

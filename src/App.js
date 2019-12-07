@@ -63,18 +63,9 @@ function App() {
 
   return (
      <div class="App">  
-
-
-       
        <Route exact path="/" component={HomePage} /> 
        <Route exact path="/Vehicles/" component={Vehicles}   />  
        <Route exact path="/VehicleModels/" component={VehicleModels}/>
-
-    
-      
-
-       
-
      </div>
     // <FooterHome/>
 
@@ -110,23 +101,7 @@ function App() {
        <Route path="/" component={HomeNavbar}/> 
     </div> */
 
-
-    
-
-
   );
 } 
 
-
-
-
-
 export default App; 
-
-
-
-
-
-
-
-

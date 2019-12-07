@@ -1,5 +1,3 @@
-
-
  import React, {Component} from 'react';
  import './FooterHomeStyle.css';
  /*import HomePage from "./pages/HomePage";*/
@@ -10,12 +8,9 @@
     render() {
         return (
             <div>
-            
-           <div class="home-footer-text home-footer fixed-bottom">
-              
-              <p class="text-white"> © 2019 Copyright Petar Čučković</p>
-              </div>
-
+                <div class="home-footer-text home-footer fixed-bottom">
+                    <p class="text-white"> © 2019 Copyright Petar Čučković</p>
+                </div>
             </div>
         );
     }

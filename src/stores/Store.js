@@ -1,4 +1,7 @@
 import { observable, action, computed } from 'mobx';
+// observable property that is read during the execution of a tracked function - ono što želimo nadgledati
+//computed - are values that can be derived from the existing state of other computed values. They are very similar to formulas in spreadsheet
+// action - is function where you change the value of the property which we observeaa
 
 
 //https://www.leighhalliday.com/create-react-app-mobx-decorators - nastaviti raditi po ovome - birds example

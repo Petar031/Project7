@@ -1,7 +1,7 @@
 import React from 'react';
 import VehicleModel from './../components/VehicleModel';
 import Navbar from "../components/Navbar";
-
+import DefaultFooter from "../layouts/DefaultFooter";
 
 export default function VehicleModelsPage() {
     return (
@@ -11,9 +11,7 @@ export default function VehicleModelsPage() {
                 <div class="home-text">   
                 </div>
                 <VehicleModel />
-                <div class="home-footer-text fixed-bottom">
-                <p class="text-muted">© 2019 Copyright Petar Čučković</p>
-                </div>
+                <DefaultFooter/>
             </div>
         </div>
     );

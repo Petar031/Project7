@@ -1,8 +1,7 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import '../layouts/Tables.css';
-
-/*import {observer} from 'mobx-react'; -priprema za mobx*/
+import { observer } from 'mobx-react';
 
 
 //@Observer (['Store'])  https://www.youtube.com/watch?v=ZAVSxBXnTr4 - 5:52
@@ -15,6 +14,7 @@ import '../layouts/Tables.css';
 //@observer
 // kada napišem const{Store} = this.props; je isto što i const Store = this.props.Store;
 
+@observer(['vehicleMakes'])
 export default function TableMake() {
 //const {Store} = this.props;
   const [state, setState] = React.useState({

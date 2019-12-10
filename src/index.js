@@ -11,17 +11,17 @@ import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
 
 
-/* za MobX
-import {Provider} from 'mobx-react';
+/*
+import { Provider } from 'mobx-react';
 import Store from './stores/Stores';
-dali umjesto Router upisati Provider prema mobx-u
+import vehicleMakes from "./VehicleMakes";
+import vehicleModels from "./VehicleModels";
 
-const Root = (
-<Provider Store = {Store}>   -dobijamo pristup storeu u projektu
+const stores = (
+<Provider stores={vehicleMakes}>   
 <App/>
 </Provider>
 );
-
 */
 
 

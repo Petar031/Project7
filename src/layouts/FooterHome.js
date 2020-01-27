@@ -8,8 +8,8 @@
     render() {
         return (
             <div>
-                <div class="home-footer-text home-footer fixed-bottom">
-                    <p class="text-white"> © 2019 Copyright Petar Čučković</p>
+                <div className="home-footer-text home-footer fixed-bottom">
+                    <p className="text-white"> © 2019 Copyright Petar Čučković</p>
                 </div>
             </div>
         );

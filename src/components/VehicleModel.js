@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TableModel from "./TableModel";
 
 
 
-export default class VehicleModel extends Component{
-
-    render() {
-        return (
-            <div>
-                <TableModel />
-            </div>
-        );
-    }
+const VehicleModel = function(props)
+{
+    console.log(props);
+    return (
+        <div>
+            <TableModel {...props}/>
+        </div>
+    );
 }
+export default VehicleModel;

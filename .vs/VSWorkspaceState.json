@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\config",
+    "\\config\\jest",
     "\\public",
-    "\\src"
+    "\\src",
+    "\\src\\components",
+    "\\src\\layouts",
+    "\\src\\pages",
+    "\\src\\stores"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\pages\\Vehicles.js",
   "PreviewInSolutionExplorer": false
 }

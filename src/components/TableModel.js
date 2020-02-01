@@ -8,9 +8,9 @@ import VehicleModelStore from "../stores/VehicleModel";
 export default inject('VehicleModel')(observer(function TableModel(props) {
 
     console.log(props);
-
     const store = new VehicleModelStore();
-    console.log(store.allVehicleModels);
+    console.log(JSON.stringify(store.allVehicleModels));
+
     const [state, setState] = React.useState({
         columns: [
             { title: 'ID', field: 'id' },
@@ -19,10 +19,7 @@ export default inject('VehicleModel')(observer(function TableModel(props) {
             { title: 'Abrv', field: 'abrv' },
         ],
         data: store.allVehicleModels
-       
-
     });
-
 
 
     return (

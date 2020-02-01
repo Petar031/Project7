@@ -3,8 +3,8 @@ import TableModel from "./TableModel";
 
 
 
-const VehicleModel = function(props)
-{
+const VehicleModel = function(props){
+
     console.log(props);
     return (
         <div>
@@ -12,4 +12,5 @@ const VehicleModel = function(props)
         </div>
     );
 }
+
 export default VehicleModel;

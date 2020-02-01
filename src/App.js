@@ -1,6 +1,6 @@
 /*import React from './node_modules/react';*/
 import React from 'react';
-/*import backgroundImg from './assets/backgroundImg.jpeg'; */  /*na background se vratiti kasnije, uzeti kod koji radi, skroz ispod*/
+/*import backgroundImg from './assets/backgroundImg.jpeg'; background*/  
 import './App.css';
 import HomePage from "./pages/HomePage";
 import Vehicles from "./pages/Vehicles";

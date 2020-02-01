@@ -11,19 +11,6 @@ import VehicleMakes from './stores/VehicleMakes';
 import VehicleModel from './stores/VehicleModel';
 
 
-/*const stores = (
-  <VehicleMakes/>
-);*/
-
-/*const stores = new VehicleMakes(); */
-/*const stores = new VehicleMakes();*/
-
-
-//ili napisati <Provider VehicleMakes={stores}>
-/*<Provider  {...stores}></Provider>*/
-
-/*<Provider store {...stores}>*/
-
 
 ReactDOM.render(
 
@@ -38,13 +25,3 @@ ReactDOM.render(
 serviceWorker.unregister(); 
 
 
-/*persistStore (VehicleMakes, {}, () => {
-  ReactDOM.render((
-<Provider VehicleMakes={VehicleMakes}>
-<BrowserRouter>
-  <App />
-  </BrowserRouter>
-</Provider>
-), document.getElementById('root')); 
-  serviceWorker.unregister(); 
-})*/

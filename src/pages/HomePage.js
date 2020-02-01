@@ -1,6 +1,4 @@
 import React from 'react'
-/*import {Link} from 'react-router-dom'*/
-/*import MainImage from '../assets/backgroundImg.jpeg'*/
 import FooterHome from "./../layouts/FooterHome";
 import HomeBody from "./../layouts/HomeBody";
 

@@ -1,7 +1,3 @@
-/*.App {
-  text-align: center;
-}*/
-
 .Main-background {
   width:100%;
   height:auto;
@@ -11,7 +7,6 @@
 body, html {
   height: 100%;
   margin: 0;
- /* overflow:hidden;*/
 }
 
 .react-bs-table-container .row{
@@ -42,33 +37,3 @@ div.col-sm-12.col-md-12.col-lg-12.col-xl-12.text-center{
 }
 
 
-/*sakriven navbar za svih stranica  */
-/*
-nav.navbar.navbar-expand-lg.navbar-light.bg-dark{
-  display:none;
-}*/
-
-/*.Navbar {
-  display:none;
-}*/
-
-/*
-button#pageDropDown.btn.btn-default.btn-secondary.dropdown-toggle{
-  ovdje promijeniti padajući izbornik sa paginacijom  
-} */
-
-/*.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}*/
-/*sve iznad obrisati osim main background  */

@@ -1,75 +1,89 @@
-import React from 'react';
-import MaterialTable from 'material-table';
+import React, {Component} from 'react';
+import ReactTable from "react-table-6"; 
 import '../layouts/Tables.css';
-import { inject, observer } from 'mobx-react';
-import VehicleMakesStore from "../stores/VehicleMakes";
+
+/*import VehicleMakesStore from "../stores/VehicleMakes"; */
+
+import 'react-table-6/react-table.css';
 
 
-export default inject('VehicleMakes')(observer(function TableMake(props) {
+class TableMake extends Component {  
 
-    console.log(props);
-    const store = new VehicleMakesStore();
-    console.log(JSON.stringify(store.allVehicleMakes));
-   
-    const [state, setState] = React.useState({  
-        columns: [
-            { title: 'ID', field: 'id' },
-            { title: 'Name', field: 'name' },
-            { title: 'Production', field: 'year' },
-            { title: 'ABRV', field: 'abrv' },
-        ],
-        data: store.allVehicleMakes
 
-    });
+    
+    render() {  
 
-    return (
 
-        <MaterialTable      
+
         
-            title="Vehicles Table"
-            columns={state.columns}
-            data={state.data}
-            editable={{
-                onRowAdd: newData =>
-                    new Promise(resolve => {
-                        setTimeout(() => {
-                            resolve();
-                            setState(prevState => {
-                                const data = [...prevState.data];
-                                data.push(newData);           
-                                return { ...prevState, data };
-                                    });                                      
-                        }, 600);
-                    }),
-                onRowUpdate: (newData, oldData) =>
-                    new Promise(resolve => {
-                        setTimeout(() => {
-                            resolve();
-                            if (oldData) {
-                                setState(prevState => {
-                                    const data = [...prevState.data];
-                                    data[data.indexOf(oldData)] = newData;
-                                    return { ...prevState, data };
-                                });
-                            }
-                        }, 600);
-                    }),
-                onRowDelete: oldData =>
-                    new Promise(resolve => {
-                        setTimeout(() => {
-                            resolve();
-                            setState(prevState => {
-                                const data = [...prevState.data];
-                                data.splice(data.indexOf(oldData), 1);
-                                return { ...prevState, data };
-                            });
-                        }, 600);
-                    }),
-            }
-            }
-        />
-    );
-    }          
-)          
-);
-            
+       const data = [{  
+          name: 'Ayaan',  
+          age: 26  
+          },{  
+           name: 'Ahana',  
+           age: 22  
+           },{  
+           name: 'Peter',  
+           age: 40      
+           },{  
+           name: 'Virat',  
+           age: 30  
+           },{  
+           name: 'Rohit',  
+           age: 32  
+           },{  
+           name: 'Dhoni',  
+           age: 37  
+           }]  
+     const columns = [{  
+         Header: 'Name',  
+         accessor: 'name'  
+         },{  
+         Header: 'Age',  
+         accessor: 'age'  
+         }]  
+
+         remove = (rowId) => {
+            // Array.prototype.filter returns new array
+            // so we aren't mutating state here
+            const arrayCopy = this.state.data.filter((row) => row.id !== rowId);
+            this.setState({data: arrayCopy});
+          };
+<Row remove={this.remove} {...rowData } />);
+
+      return (  
+
+
+        
+            <div>  
+
+
+                
+                <ReactTable  
+
+
+
+                    data={data}  
+                    columns={columns}  
+                    defaultPageSize = {2}  
+                    pageSizeOptions = {[2,4, 6]}  
+
+
+
+
+                    
+                />  
+
+                
+            </div>        
+      )  
+    }  
+  }  
+  export default TableMake;  
+
+
+
+
+
+   
+    

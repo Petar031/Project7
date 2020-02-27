@@ -12,16 +12,19 @@ import VehicleModel from './stores/VehicleModel';
 
 
 
+
+
+// Provide the store to the children
 ReactDOM.render(
 
-    <Provider VehicleMakes={VehicleMakes} VehicleModel={VehicleModel}>
+    <Provider VehicleMakes={VehicleMakes} VehicleModel={VehicleModel} >
       <BrowserRouter>
          <App />
       </BrowserRouter>
     </Provider>
-
 ,document.getElementById('root')
 ); 
 serviceWorker.unregister(); 
 
 
+/*https://stackoverflow.com/questions/54393475/correct-way-of-creating-multiple-stores-with-mobx-and-injecting-it-into-to-a-com   riješenje za stores*/

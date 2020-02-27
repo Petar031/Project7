@@ -1,16 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 tr.MuiTableRow-root:nth-child(even){
     background-color:#F0FFF0;
 }
-/*tables top  */
+
 div.MuiToolbar-root.MuiToolbar-regular.MTableToolbar-root-32.MuiToolbar-gutters{
   margin-top:40px;
 }
 
-/*tables shadow  */
 div.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded{
  box-shadow:none;
 }
 
 .MTableHeader-header-153{
  font-weight:bolder !important;
-}
+}*/

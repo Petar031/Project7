@@ -10,8 +10,16 @@ const stores = observable({
 
 
 export default stores;
+
+
+
 //export default new Store(); 
 
 
 
+/*
+export default {
+  UserStore: new UserStore(),
+  ChatStore: new ChatStore(),
+}; */
 

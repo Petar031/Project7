@@ -1,57 +1,55 @@
 import React, {Component} from 'react';
 import ReactTable from "react-table-6"; 
 import '../layouts/Tables.css';
-/*import VehicleMakesStore from "../stores/VehicleMakes"; */
+
 import 'react-table-6/react-table.css';
+/*import { observer } from 'mobx-react';*/
+/*import { inject } from 'mobx-react';*/
+
+/*import VehicleMakesStore from "../stores/VehicleMakes";*/
+
+
 
 
 class TableMake extends Component {  
+
+  constructor(props){
+    super(props);
+
+    
+
+
+
+    this.state = {
+         posts: [],
+
+    }
+  }
   
-      constructor(props){
-        super(props);
 
-        this.state = {
-          items: [],
-          currentItem: {text:'', key:''},
-        }
+  
+  
 
 
-
-        this.state = {
-             posts: [],
-
-        }
-      }
-      
-
-      addItem = e => {
-        e.preventDefault()
-        const newItem = this.state.currentItem
-        if (newItem.text !== '') {
-          console.log(newItem)
-          const items = [...this.state.items, newItem]
-          this.setState({
-            items: items,
-            currentItem: { text: '', key: '' },
-          })
-        }
-      }
+   /*  addRow = () => {
+        const table = this.state.table.slice()
+        table.push()
+        this.setState({ table })
+      } */
 
 
 
-
-        componentDidMount(){
+       /* componentDidMount(){
             const url = "https://jsonplaceholder.typicode.com/posts";
             fetch(url,{ method: "GET"
           }).then(reponse => reponse.json()).then(posts => {
               this.setState({posts: posts})
           })
-        }
+        } */
    
         
-        componentDidUpdate() {
-          this.props.inputElement.current.focus()
-        }
+
+       
       
 
       
@@ -68,7 +66,10 @@ class TableMake extends Component {
       }
     
 
-
+    /*  onClickHandler = (e) => {
+        const song = e.target.getAttribute('data-item');
+        console.log('We need to get the details for ', song);
+    }*/
 
      
 /*primjerr za dodavanje novoga reda  */
@@ -96,49 +97,43 @@ class TableMake extends Component {
 
 }*/
 
-/*addItem(e){
-  e.preventDefault();
-  const newItem = this.state.currentItem;
-  if(newItem.text !==""){
-    const items = [...this.state.items, newItem];
-  this.setState({
-    items: items,
-    currentItem:{
-      text:'',
-      key:''
-    }
-  })
-  }
-}
 
-handleInput(e){
-  this.setState({
-    currentItem:{
-      text: e.target.value,
-      key: Date.now()
-    }
-  })
-}
-  */      
        
 
 
       render() {
+        /*const { data } = this.state ;*/
+       
+/*taj dio ispod će ići u store i provjeriti slice ili peek  */
+        const data = [{
+          name: 'Tanner Linsley',
+          age: 26,
+          friend: {
+            name: 'Jason Maurer',
+            age: 23,
+          }
+        }]
+
         const columns = [
+
+
+
           {
-            Header:"User ID",
-            accessor:"userId",
-           
+            Header:"Name",   /*ovdje bi trebalo ubaciti add new row  */
+            accessor:"name",
+          
+ 
+          
          },
           {
-            Header:"ID",
+            Header:"Make ID",
             accessor:"Id",
             sortable: false,
             filterable: false
           },
 
           {
-            Header:"Title",
+            Header:"Name",
             accessor:"title",
             sortable: false,
             filterable: false
@@ -146,64 +141,58 @@ handleInput(e){
 
 
           {
-            Header:"Content",
+            Header:"Abrv",
             accessor:"body",
             sortable: false,
-            filterable: false
+            filterable: false,
+
+            
+           
+
 
           },
 
-
-
-         
-
           {
-            Header: "Actions",
+            Header: "",
+           
             Cell: props => {
+              /*const id: string = row.original.userId;*/
+
               return(
+
+               
+               
+
 
               <React.Fragment>
                 <button style={{backgroundColor: "red", color:"#fefefe"}}
                    onClick={() => {
                    this.deleteRow(props.original.id);
                   
-                }}>Delete</button>
+                   }}>Delete</button>
 
+                  
 
-
-<form onSubmit={this.state.items}>
-            <input
-              placeholder="Task"
-              ref={this.props.inputElement}
-              value={this.props.currentItem.posts}
-              onChange={this.props.handleInput}
-            />
-            <button type="submit"> Add Task </button>
-          </form>
-
-
+  
 
              </React.Fragment>
    /*pokušati ovdje ubacii i ondaa kada izbaci error vidjeti što bi mogao biti problem   */
+
+
+
+
+
+
                 
               )
+
+
+
+
+
             },
 
-
-
-
-
-          ////////////*************** */  
-         
-////////////*************** */  
-
-
-
-
-
-
-
-            
+        
               sortable:false,
               filterable: false,
               width: 280,
@@ -219,26 +208,34 @@ handleInput(e){
           ]
 
 
-
-         
+          
 
         return (  
           <ReactTable 
+
+         
+
             columns={columns}
-            data={this.state.posts} 
-            filterable
+            data={data}
+            filterable={true}
             defaultPageSize = {10}
             showPagination= {true}
+
+           
+            
+
+
+
+
           >
-
                                                                                
-
-
           </ReactTable>
           );
         }
     
       }
+
+
   export default TableMake;  
 
 

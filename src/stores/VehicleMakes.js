@@ -9,7 +9,7 @@ import { Component } from "react";
 class VehicleMakes extends Component {
      
 
-    @observable addMode = false;
+/*  @observable addMode = false;
   @observable selectedEmployees = [];
 
   @action
@@ -25,8 +25,14 @@ class VehicleMakes extends Component {
   @action
   toggleAddEmployee(){
     this.addMode = !this.addMode;
-  }
+  } */
 
+@observable data = [];
+@observable columns = [];
+
+@action deleteRow(value) {
+        this.text.push(value)
+    }
  
   
 

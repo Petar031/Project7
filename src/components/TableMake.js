@@ -1,29 +1,27 @@
 import React, {Component} from 'react';
 import ReactTable from "react-table-6"; 
 import '../layouts/Tables.css';
-
 import 'react-table-6/react-table.css';
-/*import { observer } from 'mobx-react';*/
-/*import { inject } from 'mobx-react';*/
+import { observer } from 'mobx-react';
+import { inject } from 'mobx-react';
 
-/*import VehicleMakesStore from "../stores/VehicleMakes";*/
-
-
+import VehicleMakes from "../stores/VehicleMakes";
 
 
+@inject('VehicleMakes')
+@observer
 class TableMake extends Component {  
-
+  
   constructor(props){
-    super(props);
-
+  super(props);
+  console.log(JSON.stringify('VehicleMakes'));  /*za ovaj nisam siguran dali uistinu radi */
     
-
-
-
-    this.state = {
-         posts: [],
-
+  this.state = {
+  data: [],   /*this row possibly not needed */
     }
+
+    /*const store = new VehicleMakes();*/  /*possible not needed */
+    
   }
   
 
@@ -47,23 +45,27 @@ class TableMake extends Component {
           })
         } */
    
-        
-
+        handleChange(e) {
+          this.setState({ newTodoDescription: e.target.value });
+        }  
        
+        deleteTodo(todo) {
+          this.setState({ todos: this.state.todos.filter(t => t !== todo) });
+        }
       
 
       
-      deleteRow(id) {
+    deleteRow(id) {
           console.log("id", id)
-          const index = this.state.posts.findIndex(post =>{
-          return post.id === id 
+          const index = this.state.data.findIndex(data =>{
+          return data.id === id 
         })
           console.log("index", index)
           this.setState({
-            posts: [...this.state.posts.filter(post => post.id !== id)]
+            posts: [...this.state.data.filter(data => data.id !== id)]
             })
       
-      }
+      } 
     
 
     /*  onClickHandler = (e) => {
@@ -106,45 +108,57 @@ class TableMake extends Component {
        
 /*taj dio ispod će ići u store i provjeriti slice ili peek  */
         const data = [{
-          name: 'Tanner Linsley',
-          age: 26,
-          friend: {
-            name: 'Jason Maurer',
-            age: 23,
-          }
-        }]
+          name: 'Mazda',  
+          id: 26324,
+          abrv: 'MA-ZD',
+          year: 2010,
+
+         
+        
+        },
+      {
+        name: 'Opel',  
+        id: 36324,
+        abrv: 'OP-EL',
+        year: 2013
+        
+      
+        }
+      ]
 
         const columns = [
 
 
 
           {
-            Header:"Name",   /*ovdje bi trebalo ubaciti add new row  */
+            Header:"Name",   
             accessor:"name",
-          
- 
-          
+           
          },
+
+       
+
+
           {
-            Header:"Make ID",
-            accessor:"Id",
-            sortable: false,
-            filterable: false
+            Header:"ID",
+            accessor:"id",
+            sortable: true,
+            filterable: true
           },
 
           {
-            Header:"Name",
-            accessor:"title",
-            sortable: false,
-            filterable: false
+            Header:"ABRV",
+            accessor:"abrv",
+            sortable: true,
+            filterable: true
           },
 
 
           {
-            Header:"Abrv",
-            accessor:"body",
-            sortable: false,
-            filterable: false,
+            Header:"Year",
+            accessor:"year",
+            sortable: true,
+            filterable: true
 
             
            
@@ -167,11 +181,14 @@ class TableMake extends Component {
               <React.Fragment>
                 <button style={{backgroundColor: "red", color:"#fefefe"}}
                    onClick={() => {
-                   this.deleteRow(props.original.id);
+                   this.deleteRow(props.VehicleMakes);
                   
                    }}>Delete</button>
 
-                  
+                  <button onClick={this.props.deleteTodo}>Delete</button>
+
+
+
 
   
 
@@ -200,15 +217,22 @@ class TableMake extends Component {
               maxWidth: 100
 
 
-          }
+          },
+
+        /*add new row  - samo se proširuje column*/
+
+      /*  {
+          Header:"Name",   
+          accessor:"name",
+         
+       } */
 
         
-
 
           ]
 
 
-          
+         
 
         return (  
           <ReactTable 
@@ -216,13 +240,13 @@ class TableMake extends Component {
          
 
             columns={columns}
-            data={data}
+            data={data.slice()}  /*možda će ovaj dio ići bez slice  */
             filterable={true}
             defaultPageSize = {10}
             showPagination= {true}
 
-           
             
+           
 
 
 

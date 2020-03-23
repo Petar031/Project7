@@ -3,29 +3,49 @@ import ReactTable from "react-table-6";
 import '../layouts/Tables.css';
 import 'react-table-6/react-table.css';
 import { observer } from 'mobx-react';
-import { inject } from 'mobx-react';
+
 
 import VehicleMakes from "../stores/VehicleMakes";
 
+/*import Vehicles from "../pages/Vehicles"; /*maybe also not needed */
 
-@inject('VehicleMakes')
-@observer
+
+/*@inject('VehicleMakes')
+@observer*/
 class TableMake extends Component {  
   
+  mapData() {
+      let data = VehicleMakes.data;
+
+      return data.map ((item, key) => {
+      
+          return <div>{item}</div>
+
+      }
+    );
+  }
+
+  
+
   constructor(props){
-  super(props);
-  console.log(JSON.stringify('VehicleMakes'));  /*za ovaj nisam siguran dali uistinu radi */
-    
-  this.state = {
-  data: [],   /*this row possibly not needed */
+    super(props);
+
+    this.state = {
+        data: ''
     }
 
-    /*const store = new VehicleMakes();*/  /*possible not needed */
-    
-  }
-  
+    this.VehicleMakes = this.props.VehicleMakes;
+}     
 
-  
+setData() {
+
+    let data = this.state.data;
+    this.VehicleMakes.data.push(data);
+
+    this.setState({data:""}) /*this part is not so important - it s reseting a values */
+
+}
+
   
 
 
@@ -45,7 +65,13 @@ class TableMake extends Component {
           })
         } */
    
-        handleChange(e) {
+
+
+
+
+
+
+      /*  handleChange(e) {
           this.setState({ newTodoDescription: e.target.value });
         }  
        
@@ -65,7 +91,10 @@ class TableMake extends Component {
             posts: [...this.state.data.filter(data => data.id !== id)]
             })
       
-      } 
+      } */
+
+
+
     
 
     /*  onClickHandler = (e) => {
@@ -84,7 +113,6 @@ class TableMake extends Component {
   this.setState({
     posts: [...this.state.posts.filter(post => post.id !== id)]
     })
-
 }*/
 
 /*addRow(id) {
@@ -96,7 +124,6 @@ class TableMake extends Component {
   this.setState({
     posts: [...this.state.posts.push(post => post.id !== id)]
     })
-
 }*/
 
 
@@ -107,7 +134,12 @@ class TableMake extends Component {
         /*const { data } = this.state ;*/
        
 /*taj dio ispod će ići u store i provjeriti slice ili peek  */
-        const data = [{
+        const data = [
+          
+          this.mapData(),  /*možda nepotrebno */
+         
+          
+          {
           name: 'Mazda',  
           id: 26324,
           abrv: 'MA-ZD',
@@ -172,23 +204,39 @@ class TableMake extends Component {
             Cell: props => {
               /*const id: string = row.original.userId;*/
 
+
+
+
+    /*    staviti ispod react fragment
+    
+    <button style={{backgroundColor: "red", color:"#fefefe"}}
+                   onClick={() => {
+                   this.deleteRow(props.VehicleMakes);
+                  
+                   }}>Delete</button>
+
+                  <button onClick={this.props.deleteTodo}>Delete</button>  */
+
+
               return(
 
                
                
 
 
-              <React.Fragment>
-                <button style={{backgroundColor: "red", color:"#fefefe"}}
+             
+             
+             
+             <React.Fragment>
+               
+
+               <button style={{backgroundColor: "red", color:"#fefefe"}}
                    onClick={() => {
                    this.deleteRow(props.VehicleMakes);
                   
                    }}>Delete</button>
 
-                  <button onClick={this.props.deleteTodo}>Delete</button>
-
-
-
+                  <button onClick={this.props.deleteTodo}>Delete</button>  
 
   
 
@@ -235,9 +283,10 @@ class TableMake extends Component {
          
 
         return (  
-          <ReactTable 
-
+          <ReactTable
          
+           VehicleMakes={VehicleMakes}
+           
 
             columns={columns}
             data={data.slice()}  /*možda će ovaj dio ići bez slice  */
@@ -260,7 +309,7 @@ class TableMake extends Component {
       }
 
 
-  export default TableMake;  
+  export default observer (TableMake);  
 
 
 

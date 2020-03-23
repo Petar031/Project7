@@ -1,10 +1,10 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 import { Component } from "react";
 
 
 class VehicleModel extends Component{
 
-    @observable allVehicleModels = [
+    @observable llVehicleModels = [
 
 		{ name: 'Opel Ampera', id: '03244', abrv: 'OP - AM', makeID: '03246'},
 		{ name: 'Opel Tigra', id: '03241', abrv: 'OP - TI', makeID: '03244'},
@@ -15,5 +15,22 @@ class VehicleModel extends Component{
 
 		];
 
+	/*const initialData = [
+			{ title: "Dak", fiedl: "Prescott"}
+		  ];
+
+	const addData = [
+       
+            { title: 'ID', field: 'id' },
+            { title: 'Make ID', field: 'makeID' },
+            { title: 'Name', field: 'name' },
+            { title: 'Abrv', field: 'abrv' }
+		]; */
+		
+	/*@action	addRow = () => {
+			if (this.index < this.data.length) {
+			  this.data = [...this.data, addData[this.index++]];   
+			} 
+		  }  */
 	}
 export default VehicleModel;

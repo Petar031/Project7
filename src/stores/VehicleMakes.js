@@ -1,13 +1,20 @@
-import { observable, action } from "mobx";
-import { Component } from "react";
+import { extendObservable } from "mobx";
 
 
 
 
 
 
-class VehicleMakes extends Component {
+
+
+class VehicleMakes {
      
+constructor () {
+  extendObservable(this, {
+        data: []
+
+    });
+  }
 
 /*  @observable addMode = false;
   @observable selectedEmployees = [];
@@ -27,19 +34,25 @@ class VehicleMakes extends Component {
     this.addMode = !this.addMode;
   } */
 
-@observable data = [];
+
+
+
+  /*@observable data = [];
 @observable columns = [];
 
 @action deleteRow(value) {
         this.text.push(value)
-    }
+    } */
  
   
 
 
 
 } 
-export default VehicleMakes;
+
+
+
+export default new VehicleMakes();
 
 
 

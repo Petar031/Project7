@@ -9,7 +9,7 @@
         return (
             <div>
                 <div className="home-footer-text home-footer fixed-bottom">
-                    <p className="text-white"> © 2019 Copyright Petar Čučković</p>
+                    <p className="text-white"> © 2020 Copyright </p>
                 </div>
             </div>
         );

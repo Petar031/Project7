@@ -11,15 +11,13 @@ import VehicleMakes from './stores/VehicleMakes';
 import VehicleModel from './stores/VehicleModel';
 
 
-// Provide the store to the children
 ReactDOM.render(
-
-    <Provider VehicleMakes={VehicleMakes} VehicleModel={VehicleModel} >
+    <Provider VehicleMakes={VehicleMakes} VehicleModel={VehicleModel}>
       <BrowserRouter>
          <App />
       </BrowserRouter>
     </Provider>
-    
-,document.getElementById('root')
+    ,document.getElementById('root')
 ); 
+
 serviceWorker.unregister(); 

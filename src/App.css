@@ -3,7 +3,6 @@
   height:auto;
 }
 
-
 body, html {
   height: 100%;
   margin: 0;
@@ -13,7 +12,6 @@ body, html {
   padding:0px;
   margin:0px;
 }
-
 
 div .container-fluid{
   padding-left:0px;
@@ -25,7 +23,6 @@ div.col-sm-12.col-md-12.col-lg-12.col-xl-12.text-center{
   padding-left:0px;
 }
 
-
 .home-page{
   background-image:url("./assets/backgroundImg.jpeg");
   display:flex;
@@ -35,5 +32,3 @@ div.col-sm-12.col-md-12.col-lg-12.col-xl-12.text-center{
   justify-content:center;
   height: 100vh;
 }
-
-

@@ -1,6 +1,6 @@
- import React, {Component} from 'react';
+import React, {Component} from 'react';
  import './FooterHomeStyle.css';
- /*import HomePage from "./pages/HomePage";*/
+ 
  
  
  export default class FooterHome extends Component{
@@ -9,7 +9,7 @@
         return (
             <div>
                 <div className="home-footer-text home-footer fixed-bottom">
-                    <p className="text-white"> © 2020 Copyright </p>
+                    <p className="text-white"> © 2019 Copyright Petar Čučković</p>
                 </div>
             </div>
         );

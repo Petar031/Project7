@@ -12,33 +12,11 @@ class VehicleMakes extends Component {
         { name: 'Ford Mondeo', id: '74565', abrv: 'FO - MO', year: 2017 },
     ]; 
 
-    @action add(data){
+   /* @action add(data){
         const existing = this.all;
         this.all = existing.concat(data);
-    }
-    /*@action onRowAdd */ 
-    /* @action resetValues() {
-        this.values.replace(VehicleMakes);
-    }
-    constructor() {
-        this.resetValues()
     }*/
-    /*@observable state = "pending"
-    @action
-    this.state.columns[]*/
-
-    /*
-  @observable dogList = ['Pluto', 'Oliver', 'Humphrey'];
-  @observable view = 'listView';
-  @action addDog(dog){
-   this.dogList.push(dog);
-  }*/
-
-  
-  /*
-  @action onRowAdd(allVehicleMakes) {this.allVehicleMakes.push(allVehicleMakes)}
-  @action setView(view){this.view = view;}
-  */
+    
 
 } 
 

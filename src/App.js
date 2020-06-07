@@ -8,13 +8,14 @@ import { Route } from "react-router-dom";
 
 function App() {
 
- return (
-    <div className="App">  
-       <Route exact path="/" component={HomePage} /> 
-         <Route exact path="/Vehicles/" component={Vehicles}   />  
-       <Route exact path="/VehicleModels/" component={VehicleModels}/>
-     </div>
-  );
-} 
-
-export default App; 
+  return (
+     <div className="App">  
+        <Route exact path="/" component={HomePage} /> 
+          <Route exact path="/Vehicles/" component={Vehicles}   />  
+        <Route exact path="/VehicleModels/" component={VehicleModels}/>
+      </div>
+   );
+ } 
+ 
+ export default App; 
+ 

@@ -1,15 +1,9 @@
-/*import React from './node_modules/react';*/
 import React from 'react';
-/*import backgroundImg from './assets/backgroundImg.jpeg'; background*/  
 import './App.css';
 import HomePage from "./pages/HomePage";
 import Vehicles from "./pages/Vehicles";
 import VehicleModels from "./pages/VehicleModels";
 import { Route } from "react-router-dom";
-
-
-
-
 
 
 function App() {

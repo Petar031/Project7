@@ -1,319 +1,75 @@
-import React, {Component} from 'react';
-import ReactTable from "react-table-6"; 
+import React from 'react';
+import MaterialTable from 'material-table';
 import '../layouts/Tables.css';
-import 'react-table-6/react-table.css';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
+import { action } from 'mobx';
+/*import VehicleMakes from '../stores/VehicleMakes';*/
 
+export default inject('VehicleMakes')(observer(function TableMake(props) {
 
-import VehicleMakes from "../stores/VehicleMakes";
+    console.log(props.allVehicleMakes);
+      /*Declare a new state varibale, which we will call state */
+      /*setState je metoda koja će nam pomoći da updejtamo state, tu metodu možemo koristiti bilo gdje kako bi updejtali state*/
+    const [state, setState] = React.useState({
+        //*And have this structure columns table:// /*columns and data are property here koje imaju svoje vrijednosti*/
+        columns: [
+            { title: 'ID', field: 'id' },
+            { title: 'Name', field: 'name' },
+            { title: 'Abrv', field: 'abrv' },
+        ],
+        /*prikazuje allVehicleMakes u tablici iz storea */
+        /*props are beeing used for passing data from one component to another*/
+        data: props.allVehicleMakes
+    });
+    return (
+        <MaterialTable
+        /*Then, I need to pass these columns into my Material-table like this*/
+            title="Vehicle Make Table"
+            columns={state.columns} //radimo passing columns to MaterialTable//
+            data={state.data} /*I have to use the list of state data*/
+            editable={{ 
+            //onRowAdd: newData => new Promise((resolve) => console.log("onrowadd", newData)),
+            //onRowUpdate: (newData, oldData) => new Promise((resolve) => console.log("onRowUpdate", newData, oldData)),
+            //onRowDelete: (oldData) => new Promise((resolve) => console.log("onRowDelete", oldData)),
 
-/*import Vehicles from "../pages/Vehicles"; /*maybe also not needed */
-
-
-/*@inject('VehicleMakes')
-@observer*/
-class TableMake extends Component {  
-  
-  mapData() {
-      let data = VehicleMakes.data;
-
-      return data.map ((item, key) => {
-      
-          return <div>{item}</div>
-
-      }
-    );
-  }
-
-  
-
-  constructor(props){
-    super(props);
-
-    this.state = {
-        data: ''
+            /*potrebno nekako izvesti add new rok zakačiti u debugger*/
+            onRowAdd: newData =>
+            new Promise(resolve => {
+                setTimeout(() => {
+                    resolve();
+                    setState(prevState => {
+                        const data = [...prevState.data];
+                        data.push(newData);
+                        return { ...prevState, data };
+                    });
+                }, 600);
+            }),
+                onRowUpdate: (newData, oldData) =>
+                    new Promise(resolve => {
+                        setTimeout(() => {
+                            resolve();
+                            if (oldData) {
+                                setState(prevState => {
+                                    const data = [...prevState.data];
+                                    data[data.indexOf(oldData)] = newData;
+                                    return { ...prevState, data };
+                                });
+                            }
+                        }, 600);
+                    }),
+                onRowDelete: oldData =>
+                    new Promise(resolve => {
+                        setTimeout(() => {
+                            resolve();
+                            setState(prevState => {
+                                const data = [...prevState.data];
+                                data.splice(data.indexOf(oldData), 1);
+                                return { ...prevState, data };
+                            });
+                        }, 600);
+                    }),
+                }
+            }
+        />);
     }
-
-    this.VehicleMakes = this.props.VehicleMakes;
-}     
-
-setData() {
-
-    let data = this.state.data;
-    this.VehicleMakes.data.push(data);
-
-    this.setState({data:""}) /*this part is not so important - it s reseting a values */
-
-}
-
-  
-
-
-   /*  addRow = () => {
-        const table = this.state.table.slice()
-        table.push()
-        this.setState({ table })
-      } */
-
-
-
-       /* componentDidMount(){
-            const url = "https://jsonplaceholder.typicode.com/posts";
-            fetch(url,{ method: "GET"
-          }).then(reponse => reponse.json()).then(posts => {
-              this.setState({posts: posts})
-          })
-        } */
-   
-
-
-
-
-
-
-      /*  handleChange(e) {
-          this.setState({ newTodoDescription: e.target.value });
-        }  
-       
-        deleteTodo(todo) {
-          this.setState({ todos: this.state.todos.filter(t => t !== todo) });
-        }
-      
-
-      
-    deleteRow(id) {
-          console.log("id", id)
-          const index = this.state.data.findIndex(data =>{
-          return data.id === id 
-        })
-          console.log("index", index)
-          this.setState({
-            posts: [...this.state.data.filter(data => data.id !== id)]
-            })
-      
-      } */
-
-
-
-    
-
-    /*  onClickHandler = (e) => {
-        const song = e.target.getAttribute('data-item');
-        console.log('We need to get the details for ', song);
-    }*/
-
-     
-/*primjerr za dodavanje novoga reda  */
-/*addRow(id) {
-  console.log("id", id)
-  const index = this.state.posts.findIndex(post =>{
-  return post.id === id 
-})
-  console.log("index", index)
-  this.setState({
-    posts: [...this.state.posts.filter(post => post.id !== id)]
-    })
-}*/
-
-/*addRow(id) {
-  console.log("id", id)
-  const index = this.state.posts.slice(post =>{
-    post.push(id);
-})
-  console.log("index", index)
-  this.setState({
-    posts: [...this.state.posts.push(post => post.id !== id)]
-    })
-}*/
-
-
-       
-
-
-      render() {
-        /*const { data } = this.state ;*/
-       
-/*taj dio ispod će ići u store i provjeriti slice ili peek  */
-        const data = [
-          
-          this.mapData(),  /*možda nepotrebno */
-         
-          
-          {
-          name: 'Mazda',  
-          id: 26324,
-          abrv: 'MA-ZD',
-          year: 2010,
-
-         
-        
-        },
-      {
-        name: 'Opel',  
-        id: 36324,
-        abrv: 'OP-EL',
-        year: 2013
-        
-      
-        }
-      ]
-
-        const columns = [
-
-
-
-          {
-            Header:"Name",   
-            accessor:"name",
-           
-         },
-
-       
-
-
-          {
-            Header:"ID",
-            accessor:"id",
-            sortable: true,
-            filterable: true
-          },
-
-          {
-            Header:"ABRV",
-            accessor:"abrv",
-            sortable: true,
-            filterable: true
-          },
-
-
-          {
-            Header:"Year",
-            accessor:"year",
-            sortable: true,
-            filterable: true
-
-            
-           
-
-
-          },
-
-          {
-            Header: "",
-           
-            Cell: props => {
-              /*const id: string = row.original.userId;*/
-
-
-
-
-    /*    staviti ispod react fragment
-    
-    <button style={{backgroundColor: "red", color:"#fefefe"}}
-                   onClick={() => {
-                   this.deleteRow(props.VehicleMakes);
-                  
-                   }}>Delete</button>
-
-                  <button onClick={this.props.deleteTodo}>Delete</button>  */
-
-
-              return(
-
-               
-               
-
-
-             
-             
-             
-             <React.Fragment>
-               
-
-               <button style={{backgroundColor: "red", color:"#fefefe"}}
-                   onClick={() => {
-                   this.deleteRow(props.VehicleMakes);
-                  
-                   }}>Delete</button>
-
-                  <button onClick={this.props.deleteTodo}>Delete</button>  
-
-  
-
-             </React.Fragment>
-   /*pokušati ovdje ubacii i ondaa kada izbaci error vidjeti što bi mogao biti problem   */
-
-
-
-
-
-
-                
-              )
-
-
-
-
-
-            },
-
-        
-              sortable:false,
-              filterable: false,
-              width: 280,
-              minWidth: 100,
-              maxWidth: 100
-
-
-          },
-
-        /*add new row  - samo se proširuje column*/
-
-      /*  {
-          Header:"Name",   
-          accessor:"name",
-         
-       } */
-
-        
-
-          ]
-
-
-         
-
-        return (  
-          <ReactTable
-         
-           VehicleMakes={VehicleMakes}
-           
-
-            columns={columns}
-            data={data.slice()}  /*možda će ovaj dio ići bez slice  */
-            filterable={true}
-            defaultPageSize = {10}
-            showPagination= {true}
-
-            
-           
-
-
-
-
-          >
-                                                                               
-          </ReactTable>
-          );
-        }
-    
-      }
-
-
-  export default observer (TableMake);  
-
-
-
-
-
-   
-    
+));

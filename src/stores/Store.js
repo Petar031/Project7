@@ -1,25 +1,12 @@
 import { observable } from 'mobx';
 import vehicleMakes from "./VehicleMakes";
-import vehicleModels from "./VehicleModels";
+import vehicleModel from "./VehicleModel";
 
 
 const stores = observable({
   vehicleMakes,
-  vehicleModels
+  vehicleModel
 });
 
 
 export default stores;
-
-
-
-//export default new Store(); 
-
-
-
-/*
-export default {
-  UserStore: new UserStore(),
-  ChatStore: new ChatStore(),
-}; */
-

@@ -3,21 +3,26 @@ import ReactDOM from "react-dom";
 import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import { Provider } from 'mobx-react';
-import VehicleMakes from './stores/VehicleMakes';
-import VehicleModel from './stores/VehicleModel';
+import RootStore from './stores/RootStore';
 
+function run() {
+    const rootStore = new RootStore();
+    runApplication({ rootStore });
+}
 
-ReactDOM.render(
-    <Provider VehicleMakes={VehicleMakes} VehicleModel={VehicleModel}>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>
-    </Provider>
-    ,document.getElementById('root')
-); 
+function runApplication({ rootStore }) {
+    ReactDOM.render(
+        <Provider rootStore={rootStore} vehicleMakeStore={rootStore.vehicleMakeStore} vehicleModelStore={rootStore.vehicleModelStore} >
+          <BrowserRouter>
+             <App />
+          </BrowserRouter>
+        </Provider>
+        ,document.getElementById('root')
+    ); 
+}
 
-serviceWorker.unregister(); 
+run();
+

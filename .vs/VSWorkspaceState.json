@@ -3,13 +3,14 @@
     "",
     "\\config",
     "\\config\\jest",
-    "\\public",
+    "\\scripts",
     "\\src",
+    "\\src\\assets",
     "\\src\\components",
     "\\src\\layouts",
     "\\src\\pages",
     "\\src\\stores"
   ],
-  "SelectedNode": "\\src\\pages\\Vehicles.js",
+  "SelectedNode": "\\src\\components\\TableMake.js",
   "PreviewInSolutionExplorer": false
 }

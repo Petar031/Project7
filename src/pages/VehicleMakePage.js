@@ -1,26 +1,24 @@
-import React from 'react';
-import Vehicle from './../components/Vehicle';
 import Navbar from "../components/Navbar";
+import TableMake from './../components/TableMake';
 import DefaultFooter from "../layouts/DefaultFooter";
-import Store from "../stores/Store";
+import { observer } from 'mobx-react';
+import React from 'react';
 
-class VehiclePage extends React.Component {
+@observer
+class VehicleMakePage extends React.Component {
     render() {
-        console.log(Store);
         return (
             <div>
                 <Navbar />
                 <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-                    <div className="home-text">
-                    </div>
-                    <Vehicle {...Store.vehicleMakes} />
+                    <TableMake />
                     <DefaultFooter />
                 </div>
             </div>
         );
     }
 }
-export default VehiclePage;
+export default VehicleMakePage;
 
 
 

@@ -11,6 +11,6 @@
     "\\src\\pages",
     "\\src\\stores"
   ],
-  "SelectedNode": "\\src\\components\\TableMake.js",
+  "SelectedNode": "\\src\\stores\\VehicleMakeStore.js",
   "PreviewInSolutionExplorer": false
 }
